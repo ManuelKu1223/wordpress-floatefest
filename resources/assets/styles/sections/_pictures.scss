@@ -1,0 +1,108 @@
+@import "../common/variables";
+.pictures {
+  background: $ff-blue;
+  padding: 13.75rem 0 20rem 0;
+  margin-top: -12.5rem;
+  overflow: hidden;
+  clip-path: polygon(0 12.5rem, 100% 0, 100% 100%, 0 calc(100% - 12.5rem));
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 3.125rem, 100% 0, 100% 100%, 0 calc(100% - 3.125rem));
+    padding: 80px 0;
+    margin-top: -3.125rem;
+  }
+}
+
+.photos {
+  margin-top: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__main {
+    width: calc(75% - (1.563rem/2));
+    height: 37.5rem;
+    background-color: $ff-black;
+    display: flex;
+    justify-content: space-between;
+
+    .slick-prev,
+    .slick-next {
+      display: none;
+      align-self: center;
+      position: absolute;
+      z-index: 3;
+      cursor: pointer;
+
+      &::before {
+        content: url('../icons/alt-arrow.svg');
+        background-color: $ff-black;
+        width: 3.125rem;
+        height: 3.125rem;
+        display: block;
+        padding: 0.625rem;
+      }
+    }
+
+    .slick-next {
+      right: 2px;
+    }
+
+    .slick-prev {
+      left: 2px;
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      height: auto !important;
+    }
+  }
+
+  &__side {
+    width: calc(25% - (25px/2));
+    height: 37.5rem;
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+}
+
+.photo {
+
+  &--small {
+    width: auto;
+    height: 190px !important;
+    margin-bottom: 0.525rem;
+
+    @media screen and (max-width: $smallerLaptop) {
+      height: 141px !important;
+      margin-bottom: 0.425rem;
+    }
+  }
+
+  &--large {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__wrapper {
+    &--large {
+      height: 37.5rem;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: $phoneBreak) {
+        height: auto !important;
+      }
+    }
+  }
+}

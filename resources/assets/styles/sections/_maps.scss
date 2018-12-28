@@ -1,0 +1,85 @@
+@import "../common/variables";
+
+.maps {
+  background-color: $ff-yellow;
+  padding: 23rem 0 18.75rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  clip-path: polygon(0 0, /* left top */ 100% 12.5rem, /* right top */100% calc(100% - 12.5rem), /* right bottom */0 100% /* left bottom */);
+  margin-top: -12.5rem;
+  position: relative;
+  @media screen and (min-width: $tabletBreakUp ) {
+    .lineup__content {
+      height: 25rem;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 0, 100% 3.125rem, 100% calc(100% - 3.125rem), 0 100%);
+    padding: 5rem 0 7.5rem;
+    margin-top: -3.125rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: $mobileBreak) {
+      margin-top: 25px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: calc(100%/2 - 20px);
+    margin: 10px;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $mobileBreak) {
+      width: 100%;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba($ff-black, 0.95);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -2;
+    opacity: 0;
+
+    img {
+      max-width: calc(100% - 60px);
+      max-height: calc(100% - 60px);
+    }
+
+    &--active {
+      z-index: 999;
+      opacity: 1;
+    }
+
+    &__close {
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

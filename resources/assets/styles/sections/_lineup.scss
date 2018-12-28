@@ -1,0 +1,138 @@
+@import "../common/variables";
+
+.lineup {
+  padding: 5rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  @media screen and (min-width: $tabletBreakUp ) {
+    height: calc(100% - 5rem);
+    .title {
+      position: absolute;
+    }
+  }
+
+  @media screen and (max-width: $mobileBreak) {
+    padding: 1.875rem 0;
+  }
+
+  &__background {
+    width: 100%;
+
+    @media screen and (max-width: 720px) {
+      padding-top: 0;
+    }
+
+    &__container {
+      @media screen and (min-width: $phoneBreakUp) {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      width: 45.83rem;
+    }
+  }
+
+  &__content {
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.5rem;
+
+    &__inner {
+      position: absolute;
+      z-index: 2;
+      color: $ff-white;
+      font-family: $ff-baloo;
+      text-align: center;
+      h1 {
+        font-size: 6.25rem;
+        line-height: 6.25rem
+      }
+    }
+
+    @media screen and (min-width: $tabletBreakUp ) {
+      height: 100%;
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+      height: auto;
+
+      &__inner h1 {
+        font-size: 3.125rem;
+        line-height: 3.125rem;
+      }
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      margin: 0;
+      &__inner h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin: 0;
+      }
+
+      &--maps {
+        margin-top: 2.5rem;
+      }
+    }
+
+  }
+}
+
+
+
+.artists {
+  padding: 5rem 0;
+  background-color: $ff-purple;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 6.5%;
+  }
+}
+
+.artist {
+  display: block;
+  width: calc(100%/4);
+  position: relative;
+
+  @media screen and (max-width: $phoneBreak) {
+    width: calc(100%/2);
+  }
+
+  &__bw {
+    width: 100%;
+  }
+
+  &__color {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.banner {
+  display: block;
+  width: calc(100%/2);
+  position: relative;
+
+  @media screen and (max-width: $phoneBreak) {
+    width: 100%;
+    order: 99;
+  }
+}

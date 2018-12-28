@@ -1,0 +1,17 @@
+@import "../common/variables";
+
+.frigid {
+  background-color: $ff-blue;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 6.25rem 0 12.5rem;
+
+  &__cards {
+    margin-top: 2.5rem;
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 0 0 6.25rem;
+  }
+}

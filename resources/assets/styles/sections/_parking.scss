@@ -1,0 +1,15 @@
+.parking {
+  padding: 6.25rem 0 12.5rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $ff-teal;
+
+  @media screen and (max-width: 720px) {
+    padding: 0 0 6.25rem;
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    padding-bottom: 2.5rem;
+  }
+}

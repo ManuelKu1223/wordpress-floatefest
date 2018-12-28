@@ -1,0 +1,55 @@
+@import "../common/variables";
+.sponsors {
+  padding: 6.25rem 0 6.25rem 0;
+  overflow: hidden;
+  position: relative;
+  background: $ff-yellow;
+  background-size: cover;
+  background-position: center;
+  @media screen and (min-width: $tabletBreakUp ) {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 0 0 6.25rem;
+  }
+
+  &__content,
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__wrapper {
+    flex: 1;
+  }
+}
+
+.sponsor {
+  background-color: $ff-white;
+  padding: 0.85rem 1.5rem;
+  margin: 1rem;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 90%;
+  }
+
+  @media screen and (max-width: $tabletBreak) {
+    width: 500px;
+    height: 250px;
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    width: 90%;
+    height: 150px;
+  }
+}

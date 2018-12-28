@@ -1,0 +1,23 @@
+@import "../common/variables";
+.vendors {
+  background-color: $ff-yellow;
+  padding: 23rem 0 18.75rem;
+  margin-top: -12.5rem;
+  clip-path: polygon(0 12.5rem, 100% 0, 100% 100%, 0 calc(100% - 12.5rem));
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  @media screen and (min-width: $tabletBreakUp ) {
+    height: calc(100% + (12.5rem * 2));
+    .lineup__content {
+      height: 25rem;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 3.125rem, 100% 0, 100% 100%, 0 calc(100% - 3.125rem));
+    padding: 5rem 0 7.5rem;
+    margin-top: -3.125rem;
+  }
+}

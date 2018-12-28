@@ -1,0 +1,157 @@
+@import "../common/variables";
+.watch {
+  background: $ff-purple;
+  padding: 13.75rem 0 7.5rem 0;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 12.5rem, 100% 100%, 0 100%);
+  margin-top: -12.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 0, 100% 3.125rem, 100% 100%, 0 100%);
+    padding: 5rem 0;
+    margin-top: -3.125rem;
+  }
+
+
+  .row.content {
+    margin: 1.25rem 0;
+    @media screen and (max-width: $mobileBreak){
+      margin: 0;
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__videos {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 4;
+  }
+}
+
+
+.videos {
+  margin-top: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 720px) {
+    flex-wrap: wrap;
+  }
+
+  &__current {
+    width: calc(75% - (1.563rem/2));
+    height: 37.5rem;
+    background-color: $ff-black;
+    display: flex;
+    justify-content: space-between;
+
+    .slick-prev,
+    .slick-next {
+      display: none;
+      align-self: center;
+      position: absolute;
+      z-index: 3;
+      cursor: pointer;
+
+      &::before {
+        content: url('../icons/alt-arrow.svg');
+        background-color: $ff-black;
+        width: 3.125rem;
+        height: 3.125rem;
+        display: block;
+        padding: 0.625rem;
+      }
+    }
+
+    .slick-next {
+      right: 2px;
+    }
+
+    .slick-prev {
+      left: 2px;
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      height: 310px;
+    }
+  }
+
+  &__list {
+    width: calc(25% - (1.563rem/2));
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    margin-top: 3.125rem;
+  }
+}
+
+.video {
+  &__thumbnail {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 11.88rem !important;
+    margin-bottom: 0.625rem;
+  }
+}
+
+.video-box {
+  width: 100%;
+  min-height: 37.5rem;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba($ff-black, 0.7);
+  background-blend-mode: overlay;
+  transition: background-color 300ms ease-in-out;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+
+  &__iframe {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    background-color: rgba($ff-black, 0.35);
+  }
+
+  &__play {
+    max-width: 15.63rem;
+    max-height: 15.63rem;
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    height: 310px;
+    min-height: auto;
+  }
+}

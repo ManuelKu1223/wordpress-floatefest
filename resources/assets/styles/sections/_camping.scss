@@ -1,0 +1,135 @@
+.camping {
+  padding: 6.25rem 0 18.75rem;
+  background-color: $ff-orange;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  clip-path: polygon(
+   0 0, /* left top */
+   100% 0, /* right top */
+   100% calc(100% - 12.5rem), /* right bottom */
+   0 100% /* left bottom */
+ );
+  position: relative;
+  bottom: -12.5rem;
+  margin-top: -12.5rem;
+  z-index: 3;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (max-width: 720px) {
+    clip-path: none;
+    padding: 0 0 3rem;
+    margin-top: 0;
+    bottom: auto;
+  }
+
+  &__tents {
+    display: block;
+    width: 22.5rem;
+    margin-left: auto;
+    position: relative;
+    bottom: -4.063rem;
+    left: 4.625rem;
+    z-index: 4;
+    margin-top: -4.063rem;
+    @media screen and (max-width: $tabletBreak) {
+      left: 6.25rem;
+    }
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    padding-top: 1.875rem;
+  }
+}
+
+.camping-card {
+  &__header {
+    display: flex;
+    font-family: $ff-baloo;
+    color: $ff-white;
+    text-transform: uppercase;
+    @media screen and (max-width: 720px) {
+      background-color: $ff-pink--darker;
+      display: block;
+      text-align: center;
+      padding: 1.25rem 1.875rem 0.9375rem;
+
+      .camping-card__name,
+      .camping-card__title {
+        display: inline;
+        font-size: 2.375rem;
+        background: transparent;
+        padding: 0;
+        height: auto;
+        line-height: 2.375rem;
+      }
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1.5rem !important;
+      line-height: 1.333rem !important;
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    background-color: $ff-pink;
+    flex-basis: 40%;
+    padding-left: 1.875rem;
+
+    @media screen and (max-width: $tabletBreak) {
+      font-size: 1.625rem !important;
+      line-height: 1.625rem !important;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1.5rem !important;
+      line-height: 1.333rem !important;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    background-color: $ff-pink--darker;
+    height: 6.25rem;
+    flex-basis: 60%;
+    @media screen and (max-width: $tabletBreak) {
+      font-size: 1.625rem !important;
+      line-height: 1.625rem !important;
+    }
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1.5rem !important;
+      line-height: 1.333rem !important;
+    }
+  }
+
+  &__body {
+    display: flex;
+    background-color: $ff-purple;
+    color: $ff-white;
+    padding: 1.875rem;
+
+    ul {
+      flex-basis: 50%;
+    }
+
+    @media screen and (max-width: 720px) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      padding: 0.9375rem;
+    }
+  }
+}

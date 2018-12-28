@@ -1,0 +1,123 @@
+@import "../common/variables";
+
+.vip {
+  padding: 6.25rem 0 12.25rem;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  background-color: $ff-yellow--dark;
+
+  &--exp {
+    padding: 6.25rem 0 6.25rem;
+  }
+
+  &__cards {
+    @media screen and (min-width: $tabletBreakUp) {
+      transform: translateY(-129px);
+      margin-bottom: -129px;
+      width: calc(53% - 10px);
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 0 0 6.25rem;
+  }
+
+  @media screen and (max-width: $phoneBreak) {
+    padding-bottom: 0;
+  }
+
+  &__grounded {
+    position: absolute;
+    z-index: 3;
+    bottom: 40px;
+    transform: translateY(-50%);
+    right: 40px;
+    background-color: $ff-white;
+
+    &__image {
+      height: 195px;
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+      position: static;
+      display: inline-block;
+      margin: 25px auto 10px;
+      transform: none;
+      &__wrapper {
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+
+.vip-exp {
+  display: flex;
+  padding: 0 15px;
+  justify-content: space-between;
+
+  &__gallery {
+    width: 100%;
+    position: relative;
+
+    .slick-arrow {
+      background-color: $ff-purple;
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+
+      &::before {
+        content: url('../icons/arrow-purple.svg');
+        display: block;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    }
+
+    .slick-next {
+      right: 10px;
+      &::before {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+      &::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+
+
+  }
+
+  &-subtitle {
+    display: flex;
+    @media screen and (max-width: 720px) {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  }
+
+  &__side {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: calc(47% - 10px);
+
+    @media screen and (max-width: $tabletBreak) {
+      display: none;
+    }
+  }
+}

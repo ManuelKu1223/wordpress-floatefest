@@ -1,0 +1,32 @@
+// Colors
+$ff-purple: #5e04a1;
+$ff-purple--light: #852be1;
+$ff-pink: #ff2ce6;
+$ff-pink--darker: #e728d0;
+$ff-pink--alt: #f11a89;
+$ff-white: #fff;
+$ff-green--dark: #015b55;
+$ff-teal: #67f9a2;
+$ff-teal--light: #63fde0;
+$ff-blue: #29d4ff;
+$ff-yellow: #fffd09;
+$ff-yellow--dark: #cae10c;
+$ff-black: #1a1a1a;
+$ff-orange: rgb(242,153,64);
+
+// Fonts
+$ff-baloo: "Baloo", sans-serif;
+$ff-roboto: "Roboto", sans-serif;
+
+// Animations
+$defTransition: all 500ms ease-in-out;
+
+// Breaking points
+$smallerLaptop: 1370px;
+$tabletBreakUp: 1113px;
+$tabletBreak: 1112px;
+$mobileBreakUp: 853px;
+$mobileBreak: 852px;
+$phoneBreakUp: 641px;
+$phoneBreak: 640px;
+$smallPhone: 340px;

@@ -1,0 +1,65 @@
+.glamping {
+  background-color: $ff-blue;
+  background-size: cover;
+  background-position: center;
+  padding: 18.75rem 0 25rem;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+   0 0, /* left top */
+   100% 0, /* right top */
+   100% 100%, /* right bottom */
+   0 calc(100% - 12.5rem) /* left bottom */
+   );
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3.125rem));
+    padding: 5rem 0;
+    margin-top: -3.125rem;
+  }
+
+   &__tree {
+     position: absolute;
+     height: 1290px;
+     top: 12%;
+     right: -10%;
+     @media screen and (max-width: $smallerLaptop) {
+       height: 1100px;
+       top: 4%;
+       right: -17%;
+     }
+
+     @media screen and (max-width: $tabletBreak) {
+       display: none;
+     }
+   }
+}
+
+.rv {
+  background-color: $ff-teal--light;
+  padding: 18.75rem 0 12.5rem;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, /* left top */ 100% 0, /* right top */100% 100%, /* right bottom */0 100% /* left bottom */);
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 5rem 0;
+  }
+
+  &__sponsor {
+    max-width: 685px;
+    margin: 20px auto 0;
+    font-family: $ff-baloo;
+    font-size: 2.3rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: $ff-white;
+    a {
+      color: $ff-white;
+      text-decoration: underline;
+      font-size: 1em;
+      line-height: 1em;
+    }
+  }
+}

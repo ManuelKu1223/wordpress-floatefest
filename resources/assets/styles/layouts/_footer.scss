@@ -1,0 +1,233 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $ff-blue;
+  position: relative;
+  padding-top: 6.25rem;
+  background-repeat: repeat;
+  overflow: hidden;
+
+  @media screen and (max-width: 720px) {
+    padding-top: 0;
+  }
+
+ &__bar {
+   display: block;
+   background-color: $ff-purple;
+   height: 8.75rem;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+
+   @media screen and (max-width: $smallerLaptop) {
+     height: 6.75rem;
+   }
+
+   @media screen and (max-width: $phoneBreak) {
+     height: 5rem;
+   }
+ }
+
+ &__skull {
+   width: 48%;
+   position: relative;
+   z-index: 3;
+   transform: translateY(27%);
+   margin-top: -16%;
+   left: 1.875rem;
+
+   @media screen and (max-width: $smallerLaptop) {
+     width: 33%;
+     transform: translateY(26%);
+     margin-top: -14%;
+   }
+
+   @media screen and (max-height: 710px) {
+     width: 33%;
+     transform: translateY(30%);
+     margin-top: -14%;
+   }
+
+   @media screen and (max-width: $phoneBreak) {
+     width: 78%;
+     left: 5px;
+   }
+ }
+
+ &__bottom {
+   align-self: baseline;
+   width:100%;
+ }
+
+ &__content {
+   display: flex;
+   flex-direction: column;
+
+   @media screen and (max-width: 720px) {
+     .container--contacts {
+       width: 100%;
+     }
+   }
+ }
+}
+
+.contact {
+
+  &__list {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      width: calc(50% - 0.9375rem);
+    }
+
+    @media screen and (max-width: 720px) {
+      flex-direction: column;
+
+      &__col {
+        width: 100%;
+      }
+    }
+  }
+
+  &-card {
+    width: 100%;
+    color: $ff-white;
+    font-family: $ff-baloo;
+
+    &:not(:last-child) {
+      margin-bottom: 2.625rem;
+    }
+
+    @media screen and (max-width: 720px) {
+      margin-bottom: 2.625rem;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      margin-bottom: 1.25rem !important;
+    }
+
+    &:nth-child(2) {
+      break-after: always;
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 1.563rem;
+      height: 2.063rem;
+      width: 12.63rem;
+      background-color: $ff-purple;
+      font-size: 1.188rem;
+    }
+
+    &__body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__address {
+      display: flex;
+      align-items: center;
+      background-color: $ff-pink;
+      padding: 0 0 0 1.563rem;
+      height: 5.25rem;
+      font-size: 2.125rem;
+      flex-grow: 1;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 720px) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $tabletBreak) {
+        font-size: 1.063rem;
+        line-height: 1.063rem;
+        padding: 0 0 0 0.625rem;
+        height: 3.375rem;
+      }
+    }
+
+    &__link {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5.25rem;
+      height: 5.25rem;
+      background-color: $ff-purple--light;
+      margin-left: 0.625rem;
+      border: none;
+      img {
+        width: 3.5rem;
+      }
+
+      &--small {
+        width: 3.375rem;
+        height: 3.375rem;
+        img {
+          width: 2.438rem;
+        }
+      }
+
+      @media screen and (max-width: $tabletBreak) {
+        width: 3.375rem;
+        height: 3.375rem;
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+
+    a {
+      font-family:  $ff-baloo;
+      font-size: 2.4rem;
+      line-height: 1.3em;
+      width: calc(50% - 0.9375rem);
+      display: block;
+      text-align: center;
+      color: $ff-white;
+
+      span {
+        color: $ff-purple;
+        background-color: $ff-white;
+        text-transform: uppercase;
+        padding: 0 10px;
+      }
+
+      @media screen and (max-width: $smallerLaptop) {
+        font-size: 2.1rem;
+      }
+
+      @media screen and (max-width: $tabletBreak) {
+        font-size: 1.4rem;
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+// .container--contacts {
+//   @media (min-width: 1360px) {
+//     width: 1340px;
+//   }
+//
+//   @media (min-width: 1250px) {
+//     width: 1220px;
+//   }
+// }

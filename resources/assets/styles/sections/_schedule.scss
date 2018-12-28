@@ -1,0 +1,103 @@
+@import "../common/variables";
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  max-width: 77%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  &__wrapper {
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    overflow: hidden;
+    min-height: calc(100% - 5rem);
+  }
+
+  &__day {
+    width: calc(100%/2 - 1.5rem);
+    &__name {
+      background-color: $ff-purple--light;
+      color: $ff-white;
+      padding: 0.2375rem 1.25rem;
+      font-family: $ff-baloo;
+      font-size: 1.5rem;
+      margin-bottom: 0.9375rem;
+    }
+
+    @media screen and (max-width: 1230px) {
+      width: calc(100%/2 - 1rem);
+    }
+
+    @media screen and (max-width: $mobileBreak) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $mobileBreak) {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1120px) {
+    max-width: 85%;
+  }
+
+  @media screen and (max-width: $tabletBreak) {
+    max-width: 90%;
+  }
+}
+
+
+.performance {
+  display: flex;
+  color: $ff-white;
+  padding: 0.2375rem 1.25rem;
+  font-family: $ff-baloo;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+  &:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+
+  &:nth-child(odd) {
+    background-color: $ff-blue;
+  }
+
+  &:nth-child(even) {
+    background-color: $ff-pink;
+  }
+
+  &__time,
+  &__artist,
+  &__stage {
+    width: calc(100%/3);
+  }
+
+  &__stage {
+    width: 25%;
+  }
+
+
+  @media screen and (max-width: 1230px) {
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: $tabletBreak) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: $mobileBreak) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 580px) {
+    font-size: 0.9rem;
+  }
+
+}

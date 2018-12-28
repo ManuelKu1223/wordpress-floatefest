@@ -1,0 +1,105 @@
+@import "../common/variables";
+.faq {
+  background-color: $ff-purple;
+  padding: 18.5rem 0 20rem 0;
+  overflow: hidden;
+  clip-path: polygon(0 0, /* left top */ 100% 12.5rem, /* right top */100% calc(100% - 12.5rem), /* right bottom */0 100% /* left bottom */);
+  margin-top: -12.63rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  &__cards {
+    margin-top: 6.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media screen and (max-width: $phoneBreak) {
+      margin-top: 2.813rem;
+    }
+  }
+
+  &__column {
+    flex-basis: calc(50% - 0.625rem);
+    @media screen and (max-width: 720px) {
+      flex-basis: 100%;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    clip-path: polygon(0 0, 100% 3.125rem, 100% calc(100% - 3.125rem), 0 100%);
+    padding: 5rem 0 7.5rem;
+    margin-top: -3.125rem;
+  }
+}
+
+.question {
+  margin-bottom: 1.25rem;
+  &__header {
+    background-color: $ff-blue;
+    display: flex;
+    font-family: $ff-baloo;
+    font-size: 3rem;
+    color: $ff-white;
+    line-height: 2.875rem;
+    padding: 1.875rem 1.688rem 1.875rem 1.875rem;
+    cursor: pointer;
+
+    @media screen and (max-width: 992px) {
+      padding: 1.25rem;
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    @media screen and (max-width: 720px) {
+      font-size: 1.875rem;
+      line-height: 1.75rem;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      padding: 0.9375rem 1.25rem;
+    }
+  }
+
+  &__name {
+    flex-grow: 1;
+  }
+
+  &__arrow {
+    width: 2.188rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      width: 1.25rem;
+      height: 0.625rem;
+      position: relative;
+      top: 0.625rem;
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__body {
+    display: none;
+    padding: 1.875rem;
+    background-color: $ff-white;
+    color: $ff-purple;
+    font-size: 1rem;
+    font-family: $ff-roboto;
+    font-weight: 900;
+    line-height: 1.5rem;
+    @media screen and (max-width: $phoneBreak) {
+      padding: 0.9375rem;
+    }
+  }
+
+
+  &--active {
+    .question__arrow img {
+      transform: rotate(180deg);
+    }
+  }
+}

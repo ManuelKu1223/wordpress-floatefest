@@ -1,0 +1,328 @@
+@import "../common/variables";
+
+.tickets {
+  background-color: $ff-blue;
+  padding: 6.25rem 0 4.375rem;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (max-width: $mobileBreak) {
+    padding-top: 1.875rem;
+    border-top: 5px solid $ff-yellow;
+    padding-bottom: 2.167rem;
+  }
+
+  &__rings {
+    max-width: 56%;
+    position: relative;
+    left: 6%;
+
+    @media screen and (max-width: 720px) {
+      display: block;
+      margin: 0 auto;
+      max-width: 60%;
+      left: 0;
+    }
+  }
+
+  &__list {
+    margin-bottom: 7.5rem;
+    @media screen and (max-width: 720px) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+
+.ticket__disclaimer {
+  background-color: $ff-purple--light;
+  padding: 0.75rem 1.1rem;
+  color: $ff-white;
+  font-family: $ff-baloo;
+  font-weight: bold;
+}
+
+.ticket-box {
+
+  @media screen and (max-width: $tabletBreak) {
+    &--new {
+      margin-top: 3.75rem;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  &__body {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 6.25rem;
+    font-size: 3rem;
+    font-family: $ff-baloo;
+
+    &--new {
+      position: relative;
+      &::before {
+        content: 'All New';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $ff-purple;
+        color: $ff-yellow;
+        position: absolute;
+        height: 6.25rem;
+        width: 6.25rem;
+        font-size: 2rem;
+        line-height: 1.75rem;
+        text-align: center;
+        transform: translateX(-100%);
+      }
+
+      @media screen and (max-width: $tabletBreak) {
+        &::before {
+          height: 1.563rem;
+          width: auto;
+          padding: 1.25rem 1.875rem;
+          top: 0;
+          right: 0;
+          transform: translateY(-100%);
+
+          @media screen and (max-width: $phoneBreak) {
+            font-size: 18px;
+            height: auto;
+            padding: 5px 1.25rem;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+      font-size: 2.375rem;
+      line-height: 2.375rem;
+    }
+
+    @media screen and (max-width: 720px) {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 2.333rem !important;
+    }
+  }
+
+  &__name {
+    background-color: $ff-pink;
+    color: $ff-white;
+    padding: 0 1.875rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: calc(100% - 500px);
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      flex: auto;
+      display: block;
+      text-align: center;
+      padding: 0.9375rem 1.25rem;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 2.333rem !important;
+      padding: 0.8333rem 1.25rem;
+    }
+  }
+
+  &__price {
+    background-color: $ff-pink--darker;
+    color: $ff-white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21.89%;
+    font-size: 2.375rem;
+
+    @media screen and (max-width: $tabletBreak) {
+      font-size: 1.625rem;
+      line-height: 1.625rem;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 50%;
+      display: block;
+      text-align: center;
+      padding: 0.625rem 1.25rem;
+      line-height: normal;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 2rem !important;
+      padding: 0.8333rem 0;
+      line-height: 2rem;
+    }
+  }
+
+  &__buy {
+    width: 21.89%;
+    font-family: $ff-baloo;
+    background-color: $ff-yellow;
+    color: $ff-purple--light;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.375rem;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $ff-pink;
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+      font-size: 1.625rem;
+      line-height: 1.625rem;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 50%;
+      display: block;
+      text-align: center;
+      padding: 0.625rem 1.25rem;
+      line-height: normal;
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 2rem !important;
+      padding: 0.8333rem 0;
+      line-height: 2rem;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: $ff-purple;
+    color: $ff-white;
+    font-family: $ff-baloo;
+    padding: 0.625rem 1.875rem;
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1.333rem !important;
+      line-height: 1.25rem;
+      padding: 0.5833rem 0.8333rem;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    background-color: $ff-purple--light;
+  }
+
+  &__more {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.38rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    color: $ff-white;
+    font-family: $ff-baloo;
+    background: $ff-purple;
+
+    &--vip {
+      @media screen and (min-width: 721px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $phoneBreak) {
+      font-size: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5833rem 1.667rem;
+      display: inline-block;
+    }
+  }
+
+  &__description {
+    font-family: $ff-roboto;
+    font-weight: 900;
+    color: $ff-white;
+
+    &--vip {
+      .ticket-box__description__inner {
+        display: flex;
+        ul {
+          flex: 1;
+        }
+
+        @media screen and (max-width: $phoneBreak) {
+          display: block;
+        }
+      }
+    }
+
+    &__inner {
+      padding: 1.875rem;
+
+      @media screen and (max-width: $phoneBreak) {
+        padding: 0.9375rem;
+      }
+    }
+
+    &__title {
+      background-color: $ff-purple;
+      font-family: $ff-baloo;
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 0 1.875rem;
+      border-right: 5px solid $ff-yellow;
+      height: 2.5rem;
+
+      @media screen and (max-width: 720px) {
+        width: 100%;
+        border-bottom: 5px solid $ff-yellow;
+        border-right: none;
+        text-align: center;
+        display: block;
+        padding: 5px 0.9375rem;
+        height: auto;
+      }
+
+      @media screen  and (max-width: $phoneBreak) {
+        padding: 0.5833rem 0.9375rem;
+      }
+    }
+
+    p, li {
+      line-height: 1.25rem;
+      font-size: 1rem;
+      letter-spacing: normal;
+      &:not(:last-child) {
+        margin: 0 0 0.25rem;
+      }
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  &:last-child {
+    @media screen and (max-width: 650px) {
+      margin-bottom: 1.875rem;
+    }
+  }
+}
